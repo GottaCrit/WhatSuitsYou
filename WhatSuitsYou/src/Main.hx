@@ -1,3 +1,4 @@
+
 package;
 
 import openfl.Assets;
@@ -7,7 +8,7 @@ import openfl.display.BitmapData;
 import openfl.display.Sprite;
 
 import openfl.events.KeyboardEvent;
-
+import openfl.ui.Keyboard;
 import openfl.Lib; 
 
 /**
@@ -35,16 +36,16 @@ class Main extends Sprite
 	
 	function keyPressed( event:KeyboardEvent )
 	{
-		if( /*event.keyCode == Keyboard.UP || */ event.keyCode == 87)
+		if( event.keyCode == Keyboard.UP || event.keyCode == 87)
 		{
 			
-		}else if( /*event.keyCode == Keyboard.LEFT || */ event.keyCode == 65)
+		}else if(event.keyCode == Keyboard.LEFT || event.keyCode == 65)
 		{
 			
-		}else if( /*event.keyCode == Keyboard.RIGHT || */ event.keyCode == 83)
+		}else if(event.keyCode == Keyboard.RIGHT || event.keyCode == 83)
 		{
 			
-		}else if( /*event.keyCode == Keyboard.DOWN || */ event.keyCode == 68)
+		}else if(event.keyCode == Keyboard.DOWN || event.keyCode == 68)
 		{
 			
 		}
