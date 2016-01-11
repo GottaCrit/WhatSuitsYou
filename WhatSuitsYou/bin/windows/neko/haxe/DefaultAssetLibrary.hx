@@ -53,15 +53,21 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		
+		
 		#end
 		
 		#if flash
 		
+		path.set ("img/player/body.png", "img/player/body.png");
+		type.set ("img/player/body.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
 		
 		var id;
+		id = "img/player/body.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		
 		
 		var assetsPrefix = null;
@@ -79,6 +85,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
 		
 		
 		if (useManifest) {
@@ -799,7 +806,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 #elseif html5
+
 
 
 
