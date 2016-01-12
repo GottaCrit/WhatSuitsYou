@@ -1,4 +1,3 @@
-
 package;
 
 import openfl.Assets;
@@ -55,9 +54,7 @@ class Main extends Sprite
 		if(e.keyCode == 65){inputs["A"] = true;}
 		if(e.keyCode == 83){inputs["S"] = true;}
 		if(e.keyCode == 68){inputs["D"] = true;}
-	}
-<<<<<<< HEAD
-	
+	}	
 	function keyPressed( event:KeyboardEvent )
 	{
 		if( event.keyCode == Keyboard.UP || event.keyCode == 87)
@@ -73,10 +70,9 @@ class Main extends Sprite
 		{
 			
 		}
-=======
+	}
 	public function update(e:Event):Void{
 		player.HandelInput(inputs);
 		player.Update();
->>>>>>> origin/master
 	}
 }
