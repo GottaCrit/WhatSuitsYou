@@ -55,22 +55,7 @@ class Main extends Sprite
 		if(e.keyCode == 83){inputs["S"] = true;}
 		if(e.keyCode == 68){inputs["D"] = true;}
 	}	
-	function keyPressed( event:KeyboardEvent )
-	{
-		if( event.keyCode == Keyboard.UP || event.keyCode == 87)
-		{
-			
-		}else if(event.keyCode == Keyboard.LEFT || event.keyCode == 65)
-		{
-			
-		}else if(event.keyCode == Keyboard.RIGHT || event.keyCode == 83)
-		{
-			
-		}else if(event.keyCode == Keyboard.DOWN || event.keyCode == 68)
-		{
-			
-		}
-	}
+	
 	public function update(e:Event):Void{
 		player.HandelInput(inputs);
 		player.Update();

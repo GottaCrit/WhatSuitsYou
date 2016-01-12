@@ -1,0 +1,17 @@
+Infinite background coding
+	making the background 3 of the same pictures and loading picture 1 of you go off picture 3 and vice versa
+	move the image, or copy and deload.
+	312 > 12 > 123
+	
+	
+Movement
+	Having a gravity system.
+	
+	
+	
+SelfDestrust timer
+	use the % got from all the armour and store it in a variable
+	Then make a timer that checks this random.
+	if(explosionPercent > randomCheck)
+	Random.float(0,100);
+	Don't forget to import -> import Random;
