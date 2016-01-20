@@ -15,3 +15,27 @@ SelfDestrust timer
 	if(explosionPercent > randomCheck)
 	Random.float(0,100);
 	Don't forget to import -> import Random;
+	
+	For the actual timer use:
+	
+	var timer = new haxe.Timer(3000); // 3 Seconds delay
+	timer.run = function() { ... }
+	
+Enums
+	We will be using a Switch
+	Something like this
+	
+	switch (getState()) {
+		case MENU:
+			//do menu things
+		break;
+		case PICKSTATE:
+			//do picking things
+		break;
+		case GAMESTATE:
+			//do platform things
+		break;
+		case HIGHSCORES:
+			//do something with highscores
+		break;
+	}
