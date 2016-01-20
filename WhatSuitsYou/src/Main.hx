@@ -17,16 +17,18 @@ import openfl.Lib;
  * 
  */
 
-enum Gamestate{
-	MainMenu;
-	PickingState;
-	PlatformState;
-	Highscores;
+enum Gamestate {
+	STARTUP;
+	MAINMENU;
+	PICKINGSTAGE;
+	PLATFORMSTATE;
+	HIGHSCORES;
 }
  
 class Main extends Sprite 
 {
-	var curretGamestate:Gamestate;
+	var lastGamestate = Gamestate.STARTUP;
+	var currentGamestate = Gamestate.MAINMENU;
 	var player:SpecialPlayer;
 	var inputs:Map<String,Bool> = ["W"=>false,"A"=>false,"S"=>false,"D"=>false];
 	
@@ -42,6 +44,37 @@ class Main extends Sprite
 		player.y = 100;
 		addChild(player);
 	}
+	
+	public function switchGamestate(){
+		if(lastGamestate != currentGamestate){
+			switch(lastGamestate) {
+				case STARTUP:
+					//Don't put anything here, this is just for debugging
+				case MAINMENU:
+					//removeChild();
+				case PICKINGSTAGE:
+					//removeChild();
+				case PLATFORMSTATE: 
+					//removeChild();
+				case HIGHSCORES: 
+					//removeChild();
+			}
+
+			switch(currentGamestate) {
+				case STARTUP:
+					//Don't put anything here, this is just for debugging
+				case MAINMENU:
+					//addChild();
+				case PICKINGSTAGE:
+					//addChild();
+				case PLATFORMSTATE:
+					//addChild();
+				case HIGHSCORES:
+					//addChild();
+			}
+			lastGamestate = currentGamestate;
+		}
+	}
 	public function onKeyUp(e:KeyboardEvent):Void{
 		if(e.keyCode == 87){inputs["W"] = false;}
 		if(e.keyCode == 65){inputs["A"] = false;}
@@ -56,7 +89,7 @@ class Main extends Sprite
 		if(e.keyCode == 68){inputs["D"] = true;}
 	}	
 	
-	public function update(e:Event):Void{
+	public function update(e:Event):Void {	
 		player.HandelInput(inputs);
 		player.Update();
 	}
