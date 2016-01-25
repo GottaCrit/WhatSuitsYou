@@ -27,8 +27,6 @@ enum Gamestate {
  
 class Main extends Sprite 
 {	
-	var game = new Game();
-	
 	var lastGamestate = Gamestate.STARTUP;
 	var currentGamestate = Gamestate.PLATFORMSTATE;	
 	
@@ -49,7 +47,7 @@ class Main extends Sprite
 				case PICKINGSTAGE:
 					//removeChild();
 				case PLATFORMSTATE: 
-					removeChild(game);
+					//removeChild();
 				case HIGHSCORES: 
 					//removeChild();
 			}
@@ -62,7 +60,7 @@ class Main extends Sprite
 				case PICKINGSTAGE:
 					//addChild();
 				case PLATFORMSTATE:
-					addChild(game);
+					//addChild();
 				case HIGHSCORES:
 					//addChild();
 			}
