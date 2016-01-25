@@ -26,28 +26,22 @@ enum Gamestate {
 }
  
 class Main extends Sprite 
-{
+{	
+	var game = new Game();
+	
 	var lastGamestate = Gamestate.STARTUP;
-	var currentGamestate = Gamestate.MAINMENU;
-	var player:SpecialPlayer;
-	var inputs:Map<String,Bool> = ["W"=>false,"A"=>false,"S"=>false,"D"=>false];
+	var currentGamestate = Gamestate.PLATFORMSTATE;	
 	
 	public function new(){
 		super();
 		
-		addEventListener(Event.ENTER_FRAME, update);
-		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
-		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
-		
-		player = new SpecialPlayer();
-		player.x = 300;
-		player.y = 100;
-		addChild(player);
 	}
-	
-	public function switchGamestate(){
-		if(lastGamestate != currentGamestate){
-			switch(lastGamestate) {
+	// With this fuction we can switch between different states of our game.
+	public function switchGamestate() {
+		// We do this by checking if we changed the state of our game to something else.	
+		if (lastGamestate != currentGamestate) {
+			// If we have changed the state of the game we need to remove the current state of the game before we add the new state.
+			switch(lastGamestate){
 				case STARTUP:
 					//Don't put anything here, this is just for debugging
 				case MAINMENU:
@@ -55,12 +49,12 @@ class Main extends Sprite
 				case PICKINGSTAGE:
 					//removeChild();
 				case PLATFORMSTATE: 
-					//removeChild();
+					removeChild(game);
 				case HIGHSCORES: 
 					//removeChild();
 			}
-
-			switch(currentGamestate) {
+			// After removing the previous state we can add our new state to the game
+			switch(currentGamestate){
 				case STARTUP:
 					//Don't put anything here, this is just for debugging
 				case MAINMENU:
@@ -68,29 +62,11 @@ class Main extends Sprite
 				case PICKINGSTAGE:
 					//addChild();
 				case PLATFORMSTATE:
-					//addChild();
+					addChild(game);
 				case HIGHSCORES:
 					//addChild();
 			}
 			lastGamestate = currentGamestate;
 		}
-	}
-	public function onKeyUp(e:KeyboardEvent):Void{
-		if(e.keyCode == 87){inputs["W"] = false;}
-		if(e.keyCode == 65){inputs["A"] = false;}
-		if(e.keyCode == 83){inputs["S"] = false;}
-		if(e.keyCode == 68){inputs["D"] = false;}
-	}
-
-	public function onKeyDown(e:KeyboardEvent):Void{
-		if(e.keyCode == 87){inputs["W"] = true;}
-		if(e.keyCode == 65){inputs["A"] = true;}
-		if(e.keyCode == 83){inputs["S"] = true;}
-		if(e.keyCode == 68){inputs["D"] = true;}
-	}	
-	
-	public function update(e:Event):Void {	
-		player.HandelInput(inputs);
-		player.Update();
 	}
 }
