@@ -19,6 +19,7 @@ import openfl.Lib;
 
 class Game extends Sprite
 {
+	//Mapping all the inputs and setting the default state to false
 	var inputs:Map<String,Bool> = ["W"=>false,"A"=>false,"S"=>false,"D"=>false];
 	var player:SpecialPlayer;
 	
@@ -30,6 +31,7 @@ class Game extends Sprite
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
 		stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
 		
+		// Adding the player to the game
 		player = new SpecialPlayer();
 		player.x = 300;
 		player.y = 100;
@@ -53,12 +55,5 @@ class Game extends Sprite
 	public function update(e:Event):Void{	
 		player.HandelInput(inputs);
 		player.Update();
-	}
-	
-	public function close(){
-		removeEventListener(Event.ENTER_FRAME, update);
-		stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
-		stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyUp);
-		removeChild(player);
 	}
 }

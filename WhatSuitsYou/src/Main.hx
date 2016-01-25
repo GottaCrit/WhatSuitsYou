@@ -17,6 +17,7 @@ import openfl.Lib;
  * 
  */
 
+// All the possible states of the game.
 enum Gamestate {
 	STARTUP;
 	MAINMENU;
@@ -41,7 +42,7 @@ class Main extends Sprite
 			// If we have changed the state of the game we need to remove the current state of the game before we add the new state.
 			switch(lastGamestate){
 				case STARTUP:
-					//Don't put anything here, this is just for debugging
+					//Don't put anything here, this is just for debugging.
 				case MAINMENU:
 					//removeChild();
 				case PICKINGSTAGE:
@@ -51,10 +52,10 @@ class Main extends Sprite
 				case HIGHSCORES: 
 					//removeChild();
 			}
-			// After removing the previous state we can add our new state to the game
+			// After removing the previous state we can add our new state to the game.
 			switch(currentGamestate){
 				case STARTUP:
-					//Don't put anything here, this is just for debugging
+					//Don't put anything here, this is just for debugging.
 				case MAINMENU:
 					//addChild();
 				case PICKINGSTAGE:
