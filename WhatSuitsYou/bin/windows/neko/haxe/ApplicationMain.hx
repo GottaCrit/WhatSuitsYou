@@ -90,7 +90,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "34",
+			build: "91",
 			company: "Mike",
 			file: "WhatSuitsYou",
 			fps: 60,
