@@ -29,10 +29,11 @@ enum Gamestate {
 class GameStates extends Sprite 
 {	
 	var mainMenu:MainMenu;
+	var pickingState:Deck;
 	var platformState:Game;
 	
 	public var lastGamestate = Gamestate.STARTUP;
-	public var currentGamestate = Gamestate.MAINMENU;
+	public var currentGamestate = Gamestate.PICKINGSTATE;
 	
 	public function new(){
 		super();
@@ -59,7 +60,7 @@ class GameStates extends Sprite
 		if (currentGamestate == Gamestate.MAINMENU) {
 			mainMenu = new MainMenu();
 		}else if(currentGamestate == Gamestate.PICKINGSTATE) {
-			//pickingState = new PickingState();
+			pickingState = new Deck();
 		}else if (currentGamestate == Gamestate.PLATFORMSTATE) {
 			platformState = new Game();
 			trace("test");
@@ -81,7 +82,7 @@ class GameStates extends Sprite
 				case MAINMENU:
 					removeChild(mainMenu);
 				case PICKINGSTATE:
-					//removeChild();
+					removeChild(pickingState);
 				case PLATFORMSTATE: 
 					removeChild(platformState);
 				case HIGHSCORES: 
@@ -95,7 +96,7 @@ class GameStates extends Sprite
 					trace("Kappa");
 					addChild(mainMenu);
 				case PICKINGSTATE:
-					//addChild();
+					addChild(pickingState);
 				case PLATFORMSTATE:
 					trace("Kappa 2");
 					addChild(platformState);
