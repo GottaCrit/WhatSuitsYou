@@ -1,4 +1,5 @@
 package;
+
 import openfl.display.Sprite;
 import openfl.Assets;
 import openfl.display.Bitmap;

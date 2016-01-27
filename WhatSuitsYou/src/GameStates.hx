@@ -23,7 +23,7 @@ enum Gamestate {
 	MAINMENU;
 	PICKINGSTATE;
 	PLATFORMSTATE;
-	HIGHSCORES;
+	HIGHSCORESTATE;
 }
  
 class GameStates extends Sprite 
@@ -31,6 +31,7 @@ class GameStates extends Sprite
 	var mainMenu:MainMenu;
 	var pickingState:Deck;
 	var platformState:Game;
+	//var highscores:HIGHSCORES;
 	
 	public var lastGamestate = Gamestate.STARTUP;
 	public var currentGamestate = Gamestate.PICKINGSTATE;
@@ -38,8 +39,8 @@ class GameStates extends Sprite
 	public function new(){
 		super();
 		addEventListener(Event.ENTER_FRAME, switchGamestate);
-		addEventListener(Event.ENTER_FRAME, checkGameState);
-		trace(currentGamestate);
+		checkGameState();
+		trace(currentGamestate);		
 	}
 	
 	public function changeGamestateToMainMenu() {
@@ -52,11 +53,14 @@ class GameStates extends Sprite
 	
 	public function changeGamestateToPlatformState() {
 		currentGamestate = Gamestate.PLATFORMSTATE;
-		trace("12341243");
 		trace(currentGamestate);
 	}
 	
-	public function checkGameState(e:Event):Void {
+	/*public function changeGamestateToHighScoreState() {
+		currentGamestate = Gamestate.HIGHSCORESTATE;
+	}*/
+	
+	public function checkGameState() {
 		if (currentGamestate == Gamestate.MAINMENU) {
 			mainMenu = new MainMenu();
 		}else if(currentGamestate == Gamestate.PICKINGSTATE) {
@@ -64,7 +68,7 @@ class GameStates extends Sprite
 		}else if (currentGamestate == Gamestate.PLATFORMSTATE) {
 			platformState = new Game();
 			trace("test");
-		}else if(currentGamestate == Gamestate.HIGHSCORES) {
+		}else if(currentGamestate == Gamestate.HIGHSCORESTATE) {
 			//var mainMenu:MainMenu;
 		}else {
 			trace("testerino");
@@ -85,7 +89,7 @@ class GameStates extends Sprite
 					removeChild(pickingState);
 				case PLATFORMSTATE: 
 					removeChild(platformState);
-				case HIGHSCORES: 
+				case HIGHSCORESTATE: 
 					//removeChild();
 			}
 			// After removing the previous state we can add our new state to the game.
@@ -97,10 +101,11 @@ class GameStates extends Sprite
 					addChild(mainMenu);
 				case PICKINGSTATE:
 					addChild(pickingState);
+					trace("Kappa3");
 				case PLATFORMSTATE:
 					trace("Kappa 2");
 					addChild(platformState);
-				case HIGHSCORES:
+				case HIGHSCORESTATE:
 					//addChild();
 			}
 			lastGamestate = currentGamestate;

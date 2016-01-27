@@ -66,11 +66,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
-		
-		
-		
-		
 		#end
 		
 		#if flash
@@ -95,22 +90,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/cards/tester1.png", AssetType.IMAGE);
 		path.set ("img/cards/tester2.png", "img/cards/tester2.png");
 		type.set ("img/cards/tester2.png", AssetType.IMAGE);
-		path.set ("img/img.rar", "img/img.rar");
-		type.set ("img/img.rar", AssetType.BINARY);
-		path.set ("img/INSTRUCTIONS.ai", "img/INSTRUCTIONS.ai");
-		type.set ("img/INSTRUCTIONS.ai", AssetType.TEXT);
-		path.set ("img/instructions.png", "img/instructions.png");
-		type.set ("img/instructions.png", AssetType.IMAGE);
 		path.set ("img/menu/instructions.png", "img/menu/instructions.png");
 		type.set ("img/menu/instructions.png", AssetType.IMAGE);
 		path.set ("img/menu/start.png", "img/menu/start.png");
 		type.set ("img/menu/start.png", AssetType.IMAGE);
 		path.set ("img/player/body.png", "img/player/body.png");
 		type.set ("img/player/body.png", AssetType.IMAGE);
-		path.set ("img/start.ai", "img/start.ai");
-		type.set ("img/start.ai", AssetType.TEXT);
-		path.set ("img/start.png", "img/start.png");
-		type.set ("img/start.png", AssetType.IMAGE);
 		
 		
 		#elseif html5
@@ -146,15 +131,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "img/cards/tester2.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "img/img.rar";
-		path.set (id, id);
-		type.set (id, AssetType.BINARY);
-		id = "img/INSTRUCTIONS.ai";
-		path.set (id, id);
-		type.set (id, AssetType.TEXT);
-		id = "img/instructions.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "img/menu/instructions.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -162,12 +138,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/player/body.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "img/start.ai";
-		path.set (id, id);
-		type.set (id, AssetType.TEXT);
-		id = "img/start.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		
@@ -187,11 +157,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
-		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -938,17 +903,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
-
-
-
-
 #elseif html5
-
-
-
-
-
 
 
 
