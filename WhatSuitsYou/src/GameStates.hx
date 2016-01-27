@@ -32,34 +32,47 @@ class GameStates extends Sprite
 	var platformState:Game;
 	
 	public var lastGamestate = Gamestate.STARTUP;
-	public var currentGamestate = Gamestate.MAINMENU;	
+	public var currentGamestate = Gamestate.MAINMENU;
 	
 	public function new(){
 		super();
 		addEventListener(Event.ENTER_FRAME, switchGamestate);
-		trace("game states class made");
-		if (currentGamestate == Gamestate.MAINMENU) {
-			mainMenu = new MainMenu();
-		}else if(currentGamestate == Gamestate.PICKINGSTATE) {
-			//pickingState = new PickingState();
-		}else if(currentGamestate == Gamestate.PLATFORMSTATE) {
-			platformState = new Game();
-		}else if(currentGamestate == Gamestate.HIGHSCORES) {
-			//var mainMenu:MainMenu;
-		}
+		addEventListener(Event.ENTER_FRAME, checkGameState);
+		trace(currentGamestate);
 	}
 	
 	public function changeGamestateToMainMenu() {
 		currentGamestate = Gamestate.MAINMENU;
 	}
 	
+	public function changeGamestateToPickingState() {
+		currentGamestate = Gamestate.PICKINGSTATE;
+	}
+	
 	public function changeGamestateToPlatformState() {
 		currentGamestate = Gamestate.PLATFORMSTATE;
+		trace("12341243");
+		trace(currentGamestate);
+	}
+	
+	public function checkGameState(e:Event):Void {
+		if (currentGamestate == Gamestate.MAINMENU) {
+			mainMenu = new MainMenu();
+		}else if(currentGamestate == Gamestate.PICKINGSTATE) {
+			//pickingState = new PickingState();
+		}else if (currentGamestate == Gamestate.PLATFORMSTATE) {
+			platformState = new Game();
+			trace("test");
+		}else if(currentGamestate == Gamestate.HIGHSCORES) {
+			//var mainMenu:MainMenu;
+		}else {
+			trace("testerino");
+		}
 	}
 
 	// With this fuction we can switch between different states of our game.
 	public function switchGamestate(e:Event):Void {
-		// We do this by checking if we changed the state of our game to something else.	
+		// We do this by checking if we changed the state of our game to something else.
 		if (lastGamestate != currentGamestate) {
 			// If we have changed the state of the game we need to remove the current state of the game before we add the new state.
 			switch(lastGamestate){
