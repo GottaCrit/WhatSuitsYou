@@ -14,6 +14,7 @@ import openfl.events.MouseEvent;
 class Cards extends Sprite
 {
 	var value : Int;
+	var backside : Bitmap;
 
 	public function new( value:Int, imagepath:String ) 
 	{
@@ -37,7 +38,7 @@ class Cards extends Sprite
 	{
 		var backsideData : BitmapData;
 		backsideData = Assets.getBitmapData("img/card/cardback.png");
-		backside = new Bitmap (backsideData);
+		var backside = new Bitmap (backsideData);
 		addChild(backside);
 	}
 	
