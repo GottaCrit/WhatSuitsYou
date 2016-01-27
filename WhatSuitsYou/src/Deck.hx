@@ -8,6 +8,7 @@ import openfl.display.Sprite;
  * ...
  * @author RWH
  */
+
 class Deck extends Sprite
 {
 	static var deck : Array<Cards> = new Array<Cards>();

@@ -36,14 +36,14 @@ class Cards extends Sprite
 	public function putBackside() //Covers the cards wtih backside.png
 	{
 		var backsideData : BitmapData;
-		backsideData = Assets.getBitmapData("cardback.png");
+		backsideData = Assets.getBitmapData("img/card/cardback.png");
 		backside = new Bitmap (backsideData);
 		addChild(backside);
 	}
 	
 	public function removeBackside(event : MouseEvent) //When the card is clicked, remove the backside, revealing the cards
 	{
-		backsideOfCard.visible = false;
+		backside.visible = false;
 	}
 	
 }
