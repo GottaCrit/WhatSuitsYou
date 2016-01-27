@@ -17,23 +17,14 @@ import openfl.events.MouseEvent;
  * @author Evan, Max, Mike, Robin, Sipan
  * 
  */
-
-// All the possible states of the game.
-enum Gamestate {
-	STARTUP;
-	MAINMENU;
-	PICKINGSTAGE;
-	PLATFORMSTATE;
-	HIGHSCORES;
-}
  
-class Main extends Sprite 
-{	
-	var lastGamestate = Gamestate.STARTUP;
-	var currentGamestate = Gamestate.PLATFORMSTATE;	
+class Main extends Sprite
+{
+	var gameState:GameStates;
 	
 	public function new(){
 		super();
+<<<<<<< HEAD
 		var press : Bitmap = new Bitmap(Assets.getBitmapData("img/start.png" ));
 		press.x = 315;
 		press.y = 120;
@@ -102,5 +93,10 @@ class Main extends Sprite
 			}
 			lastGamestate = currentGamestate;
 		}
+=======
+
+		gameState = new GameStates();
+		addChild(gameState);
+>>>>>>> origin/master
 	}
 }

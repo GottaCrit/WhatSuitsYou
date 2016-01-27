@@ -92,9 +92,13 @@ class ApplicationMain {
 		config = {
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			build: "50",
 =======
 			build: "34",
+>>>>>>> origin/master
+=======
+			build: "126",
 >>>>>>> origin/master
 			company: "Mike",
 			file: "WhatSuitsYou",

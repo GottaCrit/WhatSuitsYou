@@ -19,7 +19,7 @@ import openfl.Lib;
 
 class Game extends Sprite
 {
-	//Mapping all the inputs and setting the default state to false
+	// Mapping all the inputs and setting the default state to false
 	var inputs:Map<String,Bool> = ["W"=>false,"A"=>false,"S"=>false,"D"=>false];
 	var player:SpecialPlayer;
 	
