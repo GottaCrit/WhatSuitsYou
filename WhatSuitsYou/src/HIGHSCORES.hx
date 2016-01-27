@@ -6,6 +6,7 @@ package src;
  */
 class HIGHSCORES
 {
+	// variable list of the highscores
 	var Position1 = Int = 5;
 	var Position2 = Int = 4;
 	var Position3 = Int = 3;
@@ -15,7 +16,7 @@ class HIGHSCORES
 	public function new() 
 	{
 		removeChildren();
-		
+		// creates a text field and prints player score
 		{
 			Score = new TextField();
 			Score.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -29,6 +30,7 @@ class HIGHSCORES
 	}
 	if (PlayerScore >= Position5 && PlayerScore < Position4)
 	{
+		//compares player score to highscore positions. a message is printed together with the score to indicate a highscore position
 		Position5 = PlayerScore;
 		Result = new TextField();
 		Result.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -43,6 +45,7 @@ class HIGHSCORES
 	}
 	if (PlayerScore >= Position4 && PlayerScore < Position3)
 	{
+		//compares player score to highscore positions
 		Position5 = PlayerScore;
 		Result = new TextField();
 		Result.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -57,6 +60,7 @@ class HIGHSCORES
 	}
 	if (PlayerScore >= Position3 && PlayerScore < Position2)
 	{
+		//compares player score to highscore positions
 		Position5 = PlayerScore;
 		Result = new TextField();
 		Result.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -71,6 +75,7 @@ class HIGHSCORES
 	}
 	if (PlayerScore >= Position2 && PlayerScore < Position1)
 	{
+		//compares player score to highscore positions
 		Position5 = PlayerScore;
 		Result = new TextField();
 		Result.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -86,6 +91,7 @@ class HIGHSCORES
 	
 	if (PlayerScore >= Position1)
 	{
+		//compares player score to highscore positions
 		Position5 = PlayerScore;
 		Result = new TextField();
 		Result.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 24, 0x0FFFFF);
@@ -98,5 +104,5 @@ class HIGHSCORES
 		addChild(Result);
 	
 	}
-	
+	// prints the new list of highscores
 }
