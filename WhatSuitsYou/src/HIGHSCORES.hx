@@ -23,7 +23,7 @@ class HIGHSCORES extends Sprite
 	var Position3:Int = 3;
 	var Position4:Int = 2;
 	var Position5:Int = 1;
-	var PlayerScore:Int = 1;
+	var PlayerScore:Int = 2;
 	public function new() 
 	
 	{
