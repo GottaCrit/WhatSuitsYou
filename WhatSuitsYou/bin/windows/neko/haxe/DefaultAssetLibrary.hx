@@ -56,15 +56,27 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 		#end
 		
 		#if flash
 		
+<<<<<<< HEAD
 		path.set ("img/INSTRUCTIONS.ai", "img/INSTRUCTIONS.ai");
 		type.set ("img/INSTRUCTIONS.ai", AssetType.TEXT);
 		path.set ("img/instructions.png", "img/instructions.png");
 		type.set ("img/instructions.png", AssetType.IMAGE);
+=======
+		path.set ("img/cards/card example.png", "img/cards/card example.png");
+		type.set ("img/cards/card example.png", AssetType.IMAGE);
+		path.set ("img/cards/tester1.png", "img/cards/tester1.png");
+		type.set ("img/cards/tester1.png", AssetType.IMAGE);
+		path.set ("img/cards/tester2.png", "img/cards/tester2.png");
+		type.set ("img/cards/tester2.png", AssetType.IMAGE);
+>>>>>>> origin/master
 		path.set ("img/player/body.png", "img/player/body.png");
 		type.set ("img/player/body.png", AssetType.IMAGE);
 		path.set ("img/start.ai", "img/start.ai");
@@ -76,10 +88,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+<<<<<<< HEAD
 		id = "img/INSTRUCTIONS.ai";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "img/instructions.png";
+=======
+		id = "img/cards/card example.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/cards/tester1.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "img/cards/tester2.png";
+>>>>>>> origin/master
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "img/player/body.png";
@@ -112,7 +134,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
+<<<<<<< HEAD
 		useManifest = true;
+=======
+>>>>>>> origin/master
 		
 		
 		if (useManifest) {
@@ -763,7 +788,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 #elseif html5
 
 
@@ -772,7 +800,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 #else
 
 

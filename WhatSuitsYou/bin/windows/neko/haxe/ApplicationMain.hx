@@ -91,7 +91,11 @@ class ApplicationMain {
 		
 		config = {
 			
+<<<<<<< HEAD
 			build: "50",
+=======
+			build: "34",
+>>>>>>> origin/master
 			company: "Mike",
 			file: "WhatSuitsYou",
 			fps: 60,

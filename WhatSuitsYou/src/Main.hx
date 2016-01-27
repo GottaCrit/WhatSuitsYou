@@ -18,18 +18,19 @@ import openfl.events.MouseEvent;
  * 
  */
 
-enum Gamestate{
-	MainMenu;
-	PickingState;
-	PlatformState;
-	Highscores;
+// All the possible states of the game.
+enum Gamestate {
+	STARTUP;
+	MAINMENU;
+	PICKINGSTAGE;
+	PLATFORMSTATE;
+	HIGHSCORES;
 }
  
 class Main extends Sprite 
-{
-	var curretGamestate:Gamestate;
-	var player:SpecialPlayer;
-	var inputs:Map<String,Bool> = ["W"=>false,"A"=>false,"S"=>false,"D"=>false];
+{	
+	var lastGamestate = Gamestate.STARTUP;
+	var currentGamestate = Gamestate.PLATFORMSTATE;	
 	
 	public function new(){
 		super();
@@ -37,6 +38,7 @@ class Main extends Sprite
 		press.x = 315;
 		press.y = 120;
 		
+<<<<<<< HEAD
 		addEventListener( MouseEvent.CLICK, startScreen );
 		addChild( press );
 		
@@ -65,17 +67,40 @@ class Main extends Sprite
 		if(e.keyCode == 65){inputs["A"] = false;}
 		if(e.keyCode == 83){inputs["S"] = false;}
 		if(e.keyCode == 68){inputs["D"] = false;}
+=======
+>>>>>>> origin/master
 	}
-
-	public function onKeyDown(e:KeyboardEvent):Void{
-		if(e.keyCode == 87){inputs["W"] = true;}
-		if(e.keyCode == 65){inputs["A"] = true;}
-		if(e.keyCode == 83){inputs["S"] = true;}
-		if(e.keyCode == 68){inputs["D"] = true;}
-	}	
-	
-	public function update(e:Event):Void{
-		player.HandelInput(inputs);
-		player.Update();
+	// With this fuction we can switch between different states of our game.
+	public function switchGamestate() {
+		// We do this by checking if we changed the state of our game to something else.	
+		if (lastGamestate != currentGamestate) {
+			// If we have changed the state of the game we need to remove the current state of the game before we add the new state.
+			switch(lastGamestate){
+				case STARTUP:
+					//Don't put anything here, this is just for debugging.
+				case MAINMENU:
+					//removeChild();
+				case PICKINGSTAGE:
+					//removeChild();
+				case PLATFORMSTATE: 
+					//removeChild();
+				case HIGHSCORES: 
+					//removeChild();
+			}
+			// After removing the previous state we can add our new state to the game.
+			switch(currentGamestate){
+				case STARTUP:
+					//Don't put anything here, this is just for debugging.
+				case MAINMENU:
+					//addChild();
+				case PICKINGSTAGE:
+					//addChild();
+				case PLATFORMSTATE:
+					//addChild();
+				case HIGHSCORES:
+					//addChild();
+			}
+			lastGamestate = currentGamestate;
+		}
 	}
 }
