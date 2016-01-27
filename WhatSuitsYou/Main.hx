@@ -1,5 +1,4 @@
 
-import openfl.display.Sprite;
 import openfl.utils.Timer;
 import openfl.Assets;
 import openfl.display.Bitmap;
@@ -9,11 +8,12 @@ import openfl.events.MouseEvent;
 import openfl.text.TextField;
 import openfl.text.TextFieldAutoSize;
 import openfl.text.TextFormat;
+
 /**
  * ...
  * @author Evan, Max, Mike, Robin, Sipan
  */
-class HIGHSCORES extends Sprite
+class Main extends Sprite
 {
 	var Result:TextField;
 	var Score:TextField;
