@@ -39,7 +39,7 @@ class Deck extends Sprite
 	var totalCheckPoint:Int;
 	var totalFailurePercentOfBlowingUp:Int;
 	
-	var rounds:Int;
+	var rounds:Int = 0;
 	var score:Int;
 	
 	var clickedHeadFailChance:Int;
@@ -389,7 +389,7 @@ class Deck extends Sprite
 		totalFailChance.y = 240;
 		totalFailChance.text = "Total Failure Chance = " + (clickedHeadFailChance + clickedArmourFailChance + clickedEngineFailChance + clickedWeaponFailChance + clickedLegFailChance) + "%" ;
 		addChild(totalFailChance);
-		rounds = 0;
+		//rounds = 0;
 		failureCheck();
 	}
 	
@@ -453,6 +453,7 @@ class Deck extends Sprite
 			score = 1000 * rounds;
 		}
 		results();
+
 	}
 	
 	public function results()
