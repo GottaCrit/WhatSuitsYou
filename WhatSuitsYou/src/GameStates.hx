@@ -29,11 +29,13 @@ enum Gamestate {
 
 class GameStates extends Sprite 
 {	
+	// Used in checkGameState to make childeren
 	var mainMenu:MainMenu;
 	var pickingState:Deck;
 	var platformState:Game;
 	var highscoreState:HIGHSCORES;
 	
+	// Maikng sure that the initial startup switch will happen in the function switchGamestate()
 	public var lastGamestate = Gamestate.STARTUP;
 	public var currentGamestate = Gamestate.PICKINGSTATE;
 	
@@ -41,29 +43,29 @@ class GameStates extends Sprite
 		super();
 		addEventListener(Event.ENTER_FRAME, switchGamestate);
 		checkGameState();
-		trace(currentGamestate);
 	}
 	
+	// A function that you can call from every class to change the state of the game to the main menu
 	public function changeGamestateToMainMenu() {
 		currentGamestate = Gamestate.MAINMENU;
 	}
 	
+	// A function that you can call from every class to change the state of the game to the pickingState
 	public function changeGamestateToPickingState() {
 		currentGamestate = Gamestate.PICKINGSTATE;
 	}
 	
+	// A function that you can call from every class to change the state of the game to the PlatformState
 	public function changeGamestateToPlatformState() {
 		currentGamestate = Gamestate.PLATFORMSTATE;
-		trace("12341243");
-		trace(currentGamestate);
 	}
 	
+	// A function that you can call from every class to change the state of the game to Highscores
 	public function changeGamestateToHighScoreState() {
 		currentGamestate = Gamestate.HIGHSCORESTATE;
-		trace("fsdafasdf");
-		trace(currentGamestate);
 	}
 	
+	// Checking what the current gamestate is and making a new child avialable to add
 	public function checkGameState() {
 		if (currentGamestate == Gamestate.MAINMENU) {
 			mainMenu = new MainMenu();
@@ -71,11 +73,9 @@ class GameStates extends Sprite
 			pickingState = new Deck();
 		}else if (currentGamestate == Gamestate.PLATFORMSTATE) {
 			platformState = new Game();
-			trace("test");
 		}else if(currentGamestate == Gamestate.HIGHSCORESTATE) {
-			var highscoreState = new HIGHSCORES();
+			highscoreState = new HIGHSCORES();
 		}else {
-			trace("testerino");
 		}
 	}
 
@@ -96,21 +96,20 @@ class GameStates extends Sprite
 				case HIGHSCORESTATE: 
 					removeChild(highscoreState);
 			}
-			// After removing the previous state we can add our new state to the game.
+			// After removing the previous state we can add the new state to the game.
 			switch(currentGamestate){
 				case STARTUP:
 					//Don't put anything here, this is just for debugging.
 				case MAINMENU:
-					trace("Kappa");
 					addChild(mainMenu);
 				case PICKINGSTATE:
 					addChild(pickingState);
 				case PLATFORMSTATE:
-					trace("Kappa 2");
 					addChild(platformState);
 				case HIGHSCORESTATE:
 					addChild(highscoreState);
 			}
+			// Maiking sure that we set the lastGamestate is equal to currentGamestate so that you won't remove something that isn't there anymore
 			lastGamestate = currentGamestate;
 		}
 	}
