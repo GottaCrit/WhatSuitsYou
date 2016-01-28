@@ -18,7 +18,7 @@ class Cards extends Sprite
 	var backside : Bitmap;
 	var card : Bitmap;
 
-	public function new(value, imagepath) 
+	public function new(value, imagepath) // This class is called with a value for the part number, as well as the path. There are individual folders for each part type.
 	{
 		super();
 		
