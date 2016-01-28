@@ -71,7 +71,7 @@ class Deck extends Sprite
 		pickState();
 	}	
 	
-	public function createBG()
+	public function createBG() // This variable creates and displays the background
 	{
 		var bgdata:BitmapData = Assets.getBitmapData("img/bg.png");
 		var bg:Bitmap = new Bitmap(bgdata);
@@ -80,7 +80,7 @@ class Deck extends Sprite
 		addChild(bg);
 	}
 	
-	public function pickState()
+	public function pickState() // This function populates each array with the correspond part cards
 	{
 		if (head == true)
 		{
@@ -109,7 +109,7 @@ class Deck extends Sprite
 		}
 	}
 	
-	public function clickedHeadCard(event:MouseEvent)
+	public function clickedHeadCard(event:MouseEvent) // This function is mimiced for each robot part. This function 
 	{
 		head = false;
 		clickedHead = event.target;
