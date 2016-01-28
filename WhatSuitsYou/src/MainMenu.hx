@@ -23,7 +23,7 @@ import openfl.Lib;
 class MainMenu extends Sprite 
 {	
 	var switchGamestate:GameStates;
-	public function new(){
+	public function new(){ // Displays the background image, and the start screen button. Also has an event listener for the players' click
 		super();
 		
 		var bgdata:BitmapData = Assets.getBitmapData("img/bg.png");
@@ -40,7 +40,7 @@ class MainMenu extends Sprite
 		addChild( press );
 	}
 	
-	public function startScreen(event:MouseEvent)
+	public function startScreen(event:MouseEvent) // Once the player clicks, the  instructions appear and the game begins
 	{
 		removeChildren();
 		var bgdata:BitmapData = Assets.getBitmapData("img/bg.png");
