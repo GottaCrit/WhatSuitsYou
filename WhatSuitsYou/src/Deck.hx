@@ -62,7 +62,7 @@ class Deck extends Sprite
 	var weapon:Bool = false;
 	var legs:Bool = false;
 	
-	
+	// Calling everything needed for the initial startup
 	public function new() 
 	{
 		super();
@@ -71,7 +71,12 @@ class Deck extends Sprite
 		pickState();
 	}	
 	
+<<<<<<< HEAD
 	public function createBG() // This variable creates and displays the background
+=======
+	// This function makes the background and adds it to the screen
+	public function createBG()
+>>>>>>> origin/master
 	{
 		var bgdata:BitmapData = Assets.getBitmapData("img/bg.png");
 		var bg:Bitmap = new Bitmap(bgdata);
@@ -80,7 +85,12 @@ class Deck extends Sprite
 		addChild(bg);
 	}
 	
+<<<<<<< HEAD
 	public function pickState() // This function populates each array with the correspond part cards
+=======
+	// This function will make sure that the right cards will get populated and displayed when the right boolean is called
+	public function pickState()
+>>>>>>> origin/master
 	{
 		if (head == true)
 		{
@@ -109,7 +119,13 @@ class Deck extends Sprite
 		}
 	}
 	
+<<<<<<< HEAD
 	public function clickedHeadCard(event:MouseEvent) // This function is mimiced for each robot part. This function 
+=======
+	// Selecting the first clicked card and give the selected card a % failure chance
+	// After Selecting the desired "Visor" the function will remove all the visor cards and then display the armour cards
+	public function clickedHeadCard(event:MouseEvent)
+>>>>>>> origin/master
 	{
 		head = false;
 		clickedHead = event.target;
@@ -125,6 +141,7 @@ class Deck extends Sprite
 		addEventListener(MouseEvent.CLICK, clickedArmourCard);
 	}
 	
+	// This function will populate the "headDeck" array with all the available Visors
 	public function popHeadArray()
 	{
 		var card:Cards;
@@ -143,6 +160,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting three random Visor cards from the "headDeck" array and display them on the screen
 	public function displayHeadCards()
 	{
 		var card:Cards;
@@ -158,7 +176,9 @@ class Deck extends Sprite
 			addChild(card);
 		}
 	}
-	
+
+	// Selecting the first clicked card and give the selected card a % failure chance
+	// After Selecting the desired "Armour piece" the function will remove all the armour pieces and then display the engine cards
 	public function clickedArmourCard(event:MouseEvent)
 	{
 		armour = false;
@@ -176,6 +196,7 @@ class Deck extends Sprite
 		addEventListener(MouseEvent.CLICK, clickedEngineCard);
 	}	
 	
+	// This function will populate the "armourDeck" array with all the available Armour pieces
 	public function popArmourArray()
 	{
 		var card:Cards;
@@ -194,6 +215,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting three random Armour pieces from the "armourDeck" array and display them on the screen
 	public function displayArmourCards()
 	{
 		var card:Cards;
@@ -210,6 +232,8 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting the first clicked card and give the selected card a % failure chance
+	// After Selecting the desired "Engine" the function will remove all the engine cards and then display the weapon cards
 	public function clickedEngineCard(event:MouseEvent)
 	{
 		engine = false;
@@ -228,6 +252,7 @@ class Deck extends Sprite
 		addEventListener(MouseEvent.CLICK, clickedWeaponCard);
 	}
 	
+	// This function will populate the "engineDeck" array with all the available Engines
 	public function popEngineArray()
 	{
 		var card:Cards;
@@ -246,6 +271,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting three random Engines from the "engineDeck" array and display them on the screen
 	public function displayEngineCards()
 	{
 		var card:Cards;
@@ -262,6 +288,8 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting the first clicked card and give the selected card a % failure chance
+	// After Selecting the desired "Weapon" the function will remove all the weapon cards and then display the leg cards
 	public function clickedWeaponCard(event:MouseEvent)
 	{
 		weapon = false;
@@ -281,6 +309,7 @@ class Deck extends Sprite
 		addEventListener(MouseEvent.CLICK, clickedLegCard);
 	}
 	
+	// This function will populate the "weaponDeck" array with all the available Weapons
 	public function popWeaponArray()
 	{
 		var card:Cards;
@@ -299,6 +328,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting three random Weapons from the "weaponDeck" array and display them on the screen
 	public function displayWeaponCards()
 	{
 		var card:Cards;
@@ -315,6 +345,8 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting the first clicked card and give the selected card a % failure chance
+	// After Selecting the desired "Leg" the function will remove all the leg cards and then display a textfield with the fail chance of every piece
 	public function clickedLegCard(event:MouseEvent)
 	{
 		legs = false;
@@ -335,6 +367,7 @@ class Deck extends Sprite
 		
 	}
 	
+	// This function will populate the "legDeck" array with all the available Legs
 	public function popLegArray()
 	{
 		var card:Cards;
@@ -353,6 +386,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// Selecting three random Legs from the "legDeck" array and display them on the screen
 	public function displayLegCards()
 	{
 		var card:Cards;
@@ -368,7 +402,7 @@ class Deck extends Sprite
 			addChild(card);
 		}
 	}
-	// createBG();
+	
 	public function totalFailure()
 	{
 		displayFailure = new TextField();
