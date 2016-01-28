@@ -13,6 +13,9 @@ import openfl.text.TextFormat;
  * ...
  * @author Evan, Max, Mike, Robin, Sipan
  */
+
+ // Unused
+ 
 class HIGHSCORES extends Sprite
 {
 	var Result:TextField;

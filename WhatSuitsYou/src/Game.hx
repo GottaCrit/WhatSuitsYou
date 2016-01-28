@@ -17,6 +17,8 @@ import openfl.Lib;
  * 
  */
 
+ // Unused
+ 
 class Game extends Sprite
 {
 	// Mapping all the inputs and setting the default state to false

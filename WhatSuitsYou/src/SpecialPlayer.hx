@@ -17,6 +17,8 @@ import openfl.Lib;
  * 
  */
 
+ // Unused
+
 class SpecialPlayer extends Sprite
 {
 	public var speed:Vector2D = new Vector2D();

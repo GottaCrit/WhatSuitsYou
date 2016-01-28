@@ -18,6 +18,8 @@ import openfl.Lib;
  * 
  */
 
+ // Unused
+ 
 class MainMenu extends Sprite 
 {	
 	var switchGamestate:GameStates;
