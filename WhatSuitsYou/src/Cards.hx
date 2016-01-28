@@ -9,42 +9,21 @@ import openfl.events.MouseEvent;
 
 /**
  * ...
- * @author RWH
+ * @author Evan, Mike
  */
 class Cards extends Sprite
 {
 	var value : Int;
+	var imagepath:String;
 	var backside : Bitmap;
+	var card : Bitmap;
 
-	public function new( value:Int, imagepath:String ) 
+	public function new(value, imagepath) 
 	{
 		super();
-		showCards;
-		putBackside;
-		removeBackside;
-	}
-	
-	public function showCards() // Once the bottom 3 cards are randomized, place them, then using the function putBackside, the backside will cover the cards.
-	{
-		var cardData : BitmapData;
-		var card : Bitmap;
 		
-		cardData = Assets.getBitmapData("(armor + random number).png");
-		card = new Bitmap ( cardData ) ;
-		addChild(card);	
+		var cardData1:BitmapData = Assets.getBitmapData(imagepath);
+		var card1:Bitmap = new Bitmap(cardData1);
+		addChild(card1);
 	}
-	
-	public function putBackside() //Covers the cards wtih backside.png
-	{
-		var backsideData : BitmapData;
-		backsideData = Assets.getBitmapData("img/card/cardback.png");
-		var backside = new Bitmap (backsideData);
-		addChild(backside);
-	}
-	
-	public function removeBackside(event : MouseEvent) //When the card is clicked, remove the backside, revealing the cards
-	{
-		backside.visible = false;
-	}
-	
 }

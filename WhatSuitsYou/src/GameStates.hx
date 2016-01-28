@@ -23,7 +23,7 @@ enum Gamestate {
 	MAINMENU;
 	PICKINGSTATE;
 	PLATFORMSTATE;
-	HIGHSCORES;
+	HIGHSCORESTATE;
 }
  
 class GameStates extends Sprite 
@@ -31,6 +31,7 @@ class GameStates extends Sprite
 	var mainMenu:MainMenu;
 	var pickingState:Deck;
 	var platformState:Game;
+	var highscoreState:HIGHSCORES;
 	
 	public var lastGamestate = Gamestate.STARTUP;
 	public var currentGamestate = Gamestate.PICKINGSTATE;
@@ -38,7 +39,7 @@ class GameStates extends Sprite
 	public function new(){
 		super();
 		addEventListener(Event.ENTER_FRAME, switchGamestate);
-		addEventListener(Event.ENTER_FRAME, checkGameState);
+		checkGameState();
 		trace(currentGamestate);
 	}
 	
@@ -56,7 +57,13 @@ class GameStates extends Sprite
 		trace(currentGamestate);
 	}
 	
-	public function checkGameState(e:Event):Void {
+	public function changeGamestateToHighScoreState() {
+		currentGamestate = Gamestate.HIGHSCORESTATE;
+		trace("fsdafasdf");
+		trace(currentGamestate);
+	}
+	
+	public function checkGameState() {
 		if (currentGamestate == Gamestate.MAINMENU) {
 			mainMenu = new MainMenu();
 		}else if(currentGamestate == Gamestate.PICKINGSTATE) {
@@ -64,8 +71,8 @@ class GameStates extends Sprite
 		}else if (currentGamestate == Gamestate.PLATFORMSTATE) {
 			platformState = new Game();
 			trace("test");
-		}else if(currentGamestate == Gamestate.HIGHSCORES) {
-			//var mainMenu:MainMenu;
+		}else if(currentGamestate == Gamestate.HIGHSCORESTATE) {
+			var highscoreState = new HIGHSCORES();
 		}else {
 			trace("testerino");
 		}
@@ -85,8 +92,8 @@ class GameStates extends Sprite
 					removeChild(pickingState);
 				case PLATFORMSTATE: 
 					removeChild(platformState);
-				case HIGHSCORES: 
-					//removeChild();
+				case HIGHSCORESTATE: 
+					removeChild(highscoreState);
 			}
 			// After removing the previous state we can add our new state to the game.
 			switch(currentGamestate){
@@ -100,8 +107,8 @@ class GameStates extends Sprite
 				case PLATFORMSTATE:
 					trace("Kappa 2");
 					addChild(platformState);
-				case HIGHSCORES:
-					//addChild();
+				case HIGHSCORESTATE:
+					addChild(highscoreState);
 			}
 			lastGamestate = currentGamestate;
 		}

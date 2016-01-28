@@ -24,15 +24,12 @@ class HIGHSCORES extends Sprite
 	var Position4:Int = 2;
 	var Position5:Int = 1;
 	var PlayerScore:Int = 2;
-	public function new() 
 	
+	public function new()
 	{
 		super();
 		removeChildren();
 		// creates a text field and prints player score
-		
-			
-		
 	
 		if (PlayerScore >= Position5 && PlayerScore < Position4)
 		{
@@ -109,5 +106,4 @@ class HIGHSCORES extends Sprite
 			addChild(Result);
 		}
 	}
-	
 }

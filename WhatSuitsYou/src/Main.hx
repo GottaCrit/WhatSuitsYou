@@ -24,7 +24,7 @@ class Main extends Sprite
 	
 	public function new(){
 		super();
-
+		
 		gameState = new GameStates();
 		addChild(gameState);
 	}

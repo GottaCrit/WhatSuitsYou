@@ -77,7 +77,6 @@ class ApplicationMain {
 		
 		
 		
-		
 		if (total == 0) {
 			
 			start ();
@@ -91,7 +90,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "9",
+			build: "280",
 			company: "Mike",
 			file: "WhatSuitsYou",
 			fps: 60,
@@ -109,13 +108,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 480,
+					height: 900,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
 					title: "WhatSuitsYou",
 					vsync: false,
-					width: 800,
+					width: 1500,
 					x: null,
 					y: null
 				},
@@ -133,7 +132,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 800, 480, "null");
+		openfl.Lib.embed (null, 1500, 900, "null");
 		#end
 		#else
 		create ();
