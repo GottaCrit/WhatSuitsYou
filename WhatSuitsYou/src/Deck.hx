@@ -401,7 +401,7 @@ class Deck extends Sprite
 		failureCheck();
 	}
 	
-	public function failureCheck()
+	public function failureCheck() // This function adds up all of the individual failure chances for each part of the robot, and then uses checkpoints, and at each checkpoint, a random number is created to check if the robot explodes or not
 	{
 		totalFailurePercentOfBlowingUp = clickedHeadFailChance + clickedArmourFailChance + clickedEngineFailChance + clickedWeaponFailChance + clickedLegFailChance;
 		for (i in 1...11)
@@ -424,7 +424,7 @@ class Deck extends Sprite
 		}
 	}
 	
-	public function scoreCalc()
+	public function scoreCalc() // This score gives each player a base score depending on their failure chance, and multiplies that score by how many rounds the robot has survived
 	{
 		score = 0;
 		if (totalFailurePercentOfBlowingUp <= 5) {
@@ -464,7 +464,7 @@ class Deck extends Sprite
 
 	}
 	
-	public function results()
+	public function results() // This function displays the score and number of rounds the players' robots has survived
 	{
 		finalResult = new TextField();
 		finalResult.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 18, 0x99FF66 );
