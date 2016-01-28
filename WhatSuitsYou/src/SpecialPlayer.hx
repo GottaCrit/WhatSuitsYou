@@ -42,7 +42,7 @@ class SpecialPlayer extends Sprite
 		accel = new Vector2D();
 		
 		//({Vector2D.UP.MultiplyVector(.8));} <<< make a "brake" button aka lower velocity
-		
+		// These variables control the movement of the robot in the platformer stage of the game. w for up - a for left - s for down - d for right
 		if(ks["W"] == true){accel.AddVector(Vector2D.UP);}
 		if(ks["A"] == true){accel.AddVector(Vector2D.LEFT);}
 		if(ks["S"] == true){accel.AddVector(Vector2D.DOWN);}
