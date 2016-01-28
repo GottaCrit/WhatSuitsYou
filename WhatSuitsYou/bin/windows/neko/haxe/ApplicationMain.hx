@@ -77,7 +77,6 @@ class ApplicationMain {
 		
 		
 		
-		
 		if (total == 0) {
 			
 			start ();
@@ -91,7 +90,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "301",
+			build: "308",
 			company: "Mike",
 			file: "WhatSuitsYou",
 			fps: 60,
