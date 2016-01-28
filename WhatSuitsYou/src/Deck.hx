@@ -389,13 +389,13 @@ class Deck extends Sprite
 		totalFailChance.y = 240;
 		totalFailChance.text = "Total Failure Chance = " + (clickedHeadFailChance + clickedArmourFailChance + clickedEngineFailChance + clickedWeaponFailChance + clickedLegFailChance) + "%" ;
 		addChild(totalFailChance);
+		rounds = 0;
 		failureCheck();
 	}
 	
 	public function failureCheck()
 	{
 		totalFailurePercentOfBlowingUp = clickedHeadFailChance + clickedArmourFailChance + clickedEngineFailChance + clickedWeaponFailChance + clickedLegFailChance;
-		rounds = 0;
 		for (i in 1...11)
 		{
 			if (i == 10)
@@ -403,13 +403,14 @@ class Deck extends Sprite
 				checkPoint1 = Math.ceil(50 * Math.random());
 				checkPoint2 = Math.ceil(50 * Math.random());
 				totalCheckPoint = checkPoint1 + checkPoint2;
+				trace(totalCheckPoint);
 				if (totalFailurePercentOfBlowingUp < totalCheckPoint)
 				{
 					rounds++;
 					scoreCalc();
 				}else {
 					rounds++;
-					failureCheck();
+					failureCheck();					
 				}
 			}
 		}
