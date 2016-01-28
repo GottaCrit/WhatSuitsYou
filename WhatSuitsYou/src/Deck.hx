@@ -16,38 +16,46 @@ import Random;
 
 class Deck extends Sprite
 {
+	// The following 5 variables are the individual arrays for each type of part for the robot
 	var headDeck : Array<Cards> = new Array<Cards>();
 	var armourDeck : Array<Cards> = new Array<Cards>();
 	var engineDeck : Array<Cards> = new Array<Cards>();
 	var weaponDeck : Array<Cards> = new Array<Cards>();
 	var legDeck : Array<Cards> = new Array<Cards>();
 
+	// These variables control the total failure state of your robot and displays it using textfields
 	var displayFailure:TextField;
 	var displayFailure2:TextField;
 	var totalFailChance:TextField;
 	
+	// This variable displays your final score
 	var finalResult:TextField;
 	
+	// What do these do?
 	var clickedHead:Cards;
 	var clickedArmour:Cards;
 	var clickedEngine:Cards;
 	var clickedWeapon:Cards;
 	var clickedLeg:Cards;
 	
+	// Checkpoints to test if your robot will explode or not, based off of your robots failure chance
 	var checkPoint1:Int;
 	var checkPoint2:Int;
 	var totalCheckPoint:Int;
 	var totalFailurePercentOfBlowingUp:Int;
 	
+	// Keeps track of the rounds past and the score
 	var rounds:Int = 0;
 	var score:Int;
 	
+	// Variables for the individual part failure chances
 	var clickedHeadFailChance:Int;
 	var clickedArmourFailChance:Int;
 	var clickedEngineFailChance:Int;
 	var clickedWeaponFailChance:Int;
 	var clickedLegFailChance:Int;
 	
+	//  Booleans to handle when each part of the robot will be selected
 	var head:Bool = true;
 	var armour:Bool = false;
 	var engine:Bool = false;
