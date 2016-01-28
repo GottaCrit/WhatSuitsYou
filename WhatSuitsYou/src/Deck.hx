@@ -71,12 +71,8 @@ class Deck extends Sprite
 		pickState();
 	}	
 	
-<<<<<<< HEAD
-	public function createBG() // This variable creates and displays the background
-=======
 	// This function makes the background and adds it to the screen
 	public function createBG()
->>>>>>> origin/master
 	{
 		var bgdata:BitmapData = Assets.getBitmapData("img/bg.png");
 		var bg:Bitmap = new Bitmap(bgdata);
@@ -85,12 +81,8 @@ class Deck extends Sprite
 		addChild(bg);
 	}
 	
-<<<<<<< HEAD
-	public function pickState() // This function populates each array with the correspond part cards
-=======
 	// This function will make sure that the right cards will get populated and displayed when the right boolean is called
 	public function pickState()
->>>>>>> origin/master
 	{
 		if (head == true)
 		{
@@ -118,14 +110,9 @@ class Deck extends Sprite
 			displayLegCards();
 		}
 	}
-	
-<<<<<<< HEAD
-	public function clickedHeadCard(event:MouseEvent) // This function is mimiced for each robot part. This function 
-=======
 	// Selecting the first clicked card and give the selected card a % failure chance
 	// After Selecting the desired "Visor" the function will remove all the visor cards and then display the armour cards
 	public function clickedHeadCard(event:MouseEvent)
->>>>>>> origin/master
 	{
 		head = false;
 		clickedHead = event.target;
@@ -403,6 +390,7 @@ class Deck extends Sprite
 		}
 	}
 	
+	// This function simply displays text fields containing the failure chance for each individual part of the robot. This also displays the cumulative failure chance of all the parts.
 	public function totalFailure()
 	{
 		displayFailure = new TextField();
@@ -435,7 +423,8 @@ class Deck extends Sprite
 		failureCheck();
 	}
 	
-	public function failureCheck() // This function adds up all of the individual failure chances for each part of the robot, and then uses checkpoints, and at each checkpoint, a random number is created to check if the robot explodes or not
+	// This function adds up all of the individual failure chances for each part of the robot, and then uses checkpoints, and at each checkpoint, a random number is created to check if the robot explodes or not
+	public function failureCheck()
 	{
 		totalFailurePercentOfBlowingUp = clickedHeadFailChance + clickedArmourFailChance + clickedEngineFailChance + clickedWeaponFailChance + clickedLegFailChance;
 		for (i in 1...11)
@@ -458,7 +447,8 @@ class Deck extends Sprite
 		}
 	}
 	
-	public function scoreCalc() // This score gives each player a base score depending on their failure chance, and multiplies that score by how many rounds the robot has survived
+	// This score gives each player a base score depending on their failure chance, and multiplies that score by how many rounds the robot has survived
+	public function scoreCalc()
 	{
 		score = 0;
 		if (totalFailurePercentOfBlowingUp <= 5) {
@@ -498,7 +488,8 @@ class Deck extends Sprite
 
 	}
 	
-	public function results() // This function displays the score and number of rounds the players' robots has survived
+	// This function displays the score and number of rounds the players' robots has survived
+	public function results()
 	{
 		finalResult = new TextField();
 		finalResult.defaultTextFormat = new TextFormat(Assets.getFont("").fontName, 18, 0x99FF66 );

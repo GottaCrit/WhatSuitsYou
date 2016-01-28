@@ -26,6 +26,7 @@ enum Gamestate {
 	HIGHSCORESTATE;
 }
  
+
 class GameStates extends Sprite 
 {	
 	var mainMenu:MainMenu;
