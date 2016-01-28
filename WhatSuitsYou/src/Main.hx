@@ -14,7 +14,7 @@ import openfl.events.MouseEvent;
 
 /**
  * 
- * @author Evan, Max, Mike, Robin, Sipan
+ * @author Evan, Max, Mike, Robin, Sipan.
  * 
  */
  
